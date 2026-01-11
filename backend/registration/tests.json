@@ -1,0 +1,21 @@
+{
+  "tests": [
+    {
+      "name": "Submit registration request",
+      "method": "POST",
+      "path": "/",
+      "body": {
+        "full_name": "Иван Иванов",
+        "inn": "123456789012",
+        "phone": "+79001234567",
+        "telegram_username": "testuser",
+        "email": "test@example.com"
+      },
+      "expectedStatus": 200,
+      "expectedBody": {
+        "success": true
+      },
+      "bodyMatcher": "partial"
+    }
+  ]
+}

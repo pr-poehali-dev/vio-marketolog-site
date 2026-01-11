@@ -30,7 +30,7 @@ const Index = () => {
               <Link to="/dashboard" className="hidden md:block">
                 <Button variant="ghost">Войти</Button>
               </Link>
-              <Link to="/dashboard" className="hidden md:block">
+              <Link to="/register" className="hidden md:block">
                 <Button className="bg-primary hover:bg-primary/90">
                   <Icon name="ArrowRight" size={18} className="mr-2" />
                   Создать магазин
@@ -60,7 +60,7 @@ const Index = () => {
                       <Link to="/dashboard" onClick={() => setMobileMenuOpen(false)}>
                         <Button variant="outline" className="w-full">Войти</Button>
                       </Link>
-                      <Link to="/dashboard" onClick={() => setMobileMenuOpen(false)}>
+                      <Link to="/register" onClick={() => setMobileMenuOpen(false)}>
                         <Button className="w-full bg-primary hover:bg-primary/90">
                           Создать магазин
                         </Button>
@@ -92,9 +92,11 @@ const Index = () => {
                   Создавайте и управляйте интернет-магазинами прямо в Telegram. Всё необходимое для запуска и развития вашего бизнеса в мессенджере.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 pt-4">
-                  <Button size="lg" className="bg-primary hover:bg-primary/90 text-lg px-8">
-                    Создать магазин
-                  </Button>
+                  <Link to="/register">
+                    <Button size="lg" className="bg-primary hover:bg-primary/90 text-lg px-8">
+                      Создать магазин
+                    </Button>
+                  </Link>
                   <Button size="lg" variant="outline" className="text-lg px-8">
                     <Icon name="MessageCircle" size={20} className="mr-2" />
                     Поддержка
@@ -421,10 +423,12 @@ const Index = () => {
             </div>
 
             <div className="mt-16 text-center">
-              <Button size="lg" className="bg-primary hover:bg-primary/90 text-lg px-12">
-                Начать работу
-                <Icon name="ArrowRight" size={20} className="ml-2" />
-              </Button>
+              <Link to="/register">
+                <Button size="lg" className="bg-primary hover:bg-primary/90 text-lg px-12">
+                  Начать работу
+                  <Icon name="ArrowRight" size={20} className="ml-2" />
+                </Button>
+              </Link>
             </div>
           </div>
         </section>
@@ -438,9 +442,11 @@ const Index = () => {
               Присоединяйтесь к сотням предпринимателей, которые уже зарабатывают с VIO marketolog
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="bg-primary hover:bg-primary/90 text-lg px-10">
-                Создать магазин бесплатно
-              </Button>
+              <Link to="/register">
+                <Button size="lg" className="bg-primary hover:bg-primary/90 text-lg px-10">
+                  Создать магазин бесплатно
+                </Button>
+              </Link>
               <Button size="lg" variant="outline" className="text-lg px-10">
                 Посмотреть демо
               </Button>
@@ -464,7 +470,7 @@ const Index = () => {
             <div>
               <h3 className="font-semibold mb-4">Документация</h3>
               <ul className="space-y-2 text-sm text-muted-foreground">
-                <li><a href="#" className="hover:text-foreground transition-colors">Руководство</a></li>
+                <li><Link to="/instructions" className="hover:text-foreground transition-colors">Инструкция PDF</Link></li>
                 <li><a href="#" className="hover:text-foreground transition-colors">API документация</a></li>
                 <li><a href="#" className="hover:text-foreground transition-colors">Видеоуроки</a></li>
               </ul>

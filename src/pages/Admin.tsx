@@ -9,6 +9,7 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 import { AdminPlanEditor } from "@/components/AdminPlanEditor";
 import { AdminSettingsEditor } from "@/components/AdminSettingsEditor";
+import { ModerationPanel } from "@/components/ModerationPanel";
 
 const Admin = () => {
   const [users, setUsers] = useState([
@@ -163,8 +164,12 @@ const Admin = () => {
           </Card>
         </div>
 
-        <Tabs defaultValue="users" className="space-y-6">
+        <Tabs defaultValue="moderation" className="space-y-6">
           <TabsList className="bg-secondary/50">
+            <TabsTrigger value="moderation">
+              <Icon name="ClipboardCheck" size={18} className="mr-2" />
+              Модерация
+            </TabsTrigger>
             <TabsTrigger value="users">
               <Icon name="Users" size={18} className="mr-2" />
               Пользователи
@@ -182,6 +187,10 @@ const Admin = () => {
               Настройки
             </TabsTrigger>
           </TabsList>
+
+          <TabsContent value="moderation" className="space-y-4">
+            <ModerationPanel />
+          </TabsContent>
 
           <TabsContent value="users" className="space-y-4">
             <Card className="bg-card/50 backdrop-blur border-border/50">
