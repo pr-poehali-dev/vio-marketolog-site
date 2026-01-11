@@ -1,0 +1,14 @@
+{
+  "tests": [
+    {
+      "name": "Get all plans and settings",
+      "method": "GET",
+      "path": "/",
+      "expectedStatus": 200,
+      "expectedBody": {
+        "plans": []
+      },
+      "bodyMatcher": "partial"
+    }
+  ]
+}

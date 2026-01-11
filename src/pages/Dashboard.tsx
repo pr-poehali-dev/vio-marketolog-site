@@ -10,6 +10,8 @@ import { Badge } from "@/components/ui/badge";
 import Icon from "@/components/ui/icon";
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import { DigitalProductsManager } from "@/components/DigitalProductsManager";
+import { CreateShopWithBot } from "@/components/CreateShopWithBot";
 
 const Dashboard = () => {
   const [products, setProducts] = useState([
@@ -102,6 +104,10 @@ const Dashboard = () => {
             <TabsTrigger value="products">
               <Icon name="Package" size={18} className="mr-2" />
               Товары
+            </TabsTrigger>
+            <TabsTrigger value="digital">
+              <Icon name="Key" size={18} className="mr-2" />
+              Цифровые товары
             </TabsTrigger>
             <TabsTrigger value="orders">
               <Icon name="ShoppingCart" size={18} className="mr-2" />
@@ -209,6 +215,10 @@ const Dashboard = () => {
             </Card>
           </TabsContent>
 
+          <TabsContent value="digital" className="space-y-4">
+            <DigitalProductsManager />
+          </TabsContent>
+
           <TabsContent value="orders" className="space-y-4">
             <Card className="bg-card/50 backdrop-blur border-border/50">
               <CardHeader>
@@ -251,6 +261,8 @@ const Dashboard = () => {
 
           <TabsContent value="settings" className="space-y-4">
             <div className="grid gap-6">
+              <CreateShopWithBot />
+              
               <Card className="bg-card/50 backdrop-blur border-border/50">
                 <CardHeader>
                   <CardTitle>Настройки магазина</CardTitle>
@@ -268,6 +280,16 @@ const Dashboard = () => {
                   <div className="grid gap-2">
                     <Label htmlFor="telegram-bot">Telegram бот</Label>
                     <Input id="telegram-bot" defaultValue="@myshop_bot" />
+                  </div>
+                  <div className="grid gap-2">
+                    <Label htmlFor="banner">Баннер магазина</Label>
+                    <Input id="banner" type="file" accept="image/*" />
+                    <p className="text-xs text-muted-foreground">Рекомендуемый размер: 1200x400px</p>
+                  </div>
+                  <div className="grid gap-2">
+                    <Label htmlFor="logo">Логотип магазина</Label>
+                    <Input id="logo" type="file" accept="image/*" />
+                    <p className="text-xs text-muted-foreground">Рекомендуемый размер: 200x200px</p>
                   </div>
                   <Button className="bg-primary hover:bg-primary/90">
                     Сохранить изменения

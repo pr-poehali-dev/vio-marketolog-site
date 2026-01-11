@@ -1,0 +1,19 @@
+{
+  "tests": [
+    {
+      "name": "Create shop with Telegram bot",
+      "method": "POST",
+      "path": "/",
+      "body": {
+        "bot_token": "test_token",
+        "shop_name": "Test Shop",
+        "user_id": 1
+      },
+      "expectedStatus": 200,
+      "expectedBody": {
+        "success": true
+      },
+      "bodyMatcher": "partial"
+    }
+  ]
+}

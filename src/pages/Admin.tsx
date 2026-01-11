@@ -7,6 +7,8 @@ import { Input } from "@/components/ui/input";
 import Icon from "@/components/ui/icon";
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import { AdminPlanEditor } from "@/components/AdminPlanEditor";
+import { AdminSettingsEditor } from "@/components/AdminSettingsEditor";
 
 const Admin = () => {
   const [users, setUsers] = useState([
@@ -343,55 +345,9 @@ const Admin = () => {
             </div>
           </TabsContent>
 
-          <TabsContent value="settings" className="space-y-4">
-            <Card className="bg-card/50 backdrop-blur border-border/50">
-              <CardHeader>
-                <CardTitle>Настройки платформы</CardTitle>
-                <CardDescription>Общие параметры и конфигурация системы</CardDescription>
-              </CardHeader>
-              <CardContent className="space-y-6">
-                <div className="space-y-4">
-                  <h3 className="font-semibold">Тарифные планы</h3>
-                  <div className="grid md:grid-cols-3 gap-4">
-                    {["Старт", "Бизнес", "Про"].map((plan, index) => (
-                      <div key={index} className="p-4 border border-border rounded-lg">
-                        <div className="font-medium mb-2">{plan}</div>
-                        <div className="text-sm text-muted-foreground mb-3">
-                          {[990, 2990, 4990][index]}₽/мес
-                        </div>
-                        <Button variant="outline" size="sm" className="w-full">
-                          Редактировать
-                        </Button>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-
-                <div className="space-y-4">
-                  <h3 className="font-semibold">Интеграции</h3>
-                  <div className="space-y-3">
-                    {[
-                      { name: "ЮKassa", status: "Подключено", icon: "CreditCard" },
-                      { name: "СДЭК", status: "Подключено", icon: "Truck" },
-                      { name: "Telegram Bot API", status: "Активно", icon: "Send" },
-                    ].map((integration, index) => (
-                      <div key={index} className="flex items-center justify-between p-4 border border-border rounded-lg">
-                        <div className="flex items-center gap-3">
-                          <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
-                            <Icon name={integration.icon} size={20} className="text-primary" />
-                          </div>
-                          <div>
-                            <div className="font-medium">{integration.name}</div>
-                            <div className="text-sm text-muted-foreground">{integration.status}</div>
-                          </div>
-                        </div>
-                        <Button variant="outline" size="sm">Настроить</Button>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
+          <TabsContent value="settings" className="space-y-8">
+            <AdminPlanEditor />
+            <AdminSettingsEditor />
           </TabsContent>
         </Tabs>
       </div>

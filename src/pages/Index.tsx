@@ -195,6 +195,11 @@ const Index = () => {
                   icon: "Zap",
                   title: "Быстрый запуск",
                   description: "Запустите магазин за 15 минут. Современный интерфейс — всё интуитивно понятно с первого раза."
+                },
+                {
+                  icon: "Key",
+                  title: "Цифровые товары",
+                  description: "Продавайте ключи к ПО, игры, аккаунты и подписки с автоматической выдачей покупателям."
                 }
               ].map((feature, index) => (
                 <Card key={index} className="bg-card/50 backdrop-blur border-border/50 hover:border-primary/50 transition-all duration-300 hover:scale-105 animate-fade-in" style={{ animationDelay: `${index * 0.1}s` }}>
